@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONELIGHTCOL</title>
+    <!-- Favicon setting with specified logo -->
+    <link rel="icon" type="image/png" href="https://www.image2url.com/r2/default/images/1778970455403-9f93de23-f347-440e-bc14-cf91fbb6cc53.png">
+    
+    <!-- Google Fonts for sleek premium design -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for cinematic/social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fcfbf9;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.02) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 0, 0, 0.01) 0%, transparent 45%);
+        }
+        
+        .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Premium Light Glassmorphism Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.07);
+        }
+
+        .glass-button {
+            background: rgba(0, 0, 0, 0.02);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-button:hover {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        /* Viewfinder framing effect representing a camera screen in dark contrast */
+        .viewfinder-corner-tl {
+            border-top: 2px solid rgba(0, 0, 0, 0.15);
+            border-left: 2px solid rgba(0, 0, 0, 0.15);
+            width: 16px; height: 16px; top: 12px; left: 12px; position: absolute;
+        }
+        .viewfinder-corner-tr {
+            border-top: 2px solid rgba(0, 0, 0, 0.15);
+            border-right: 2px solid rgba(0, 0, 0, 0.15);
+            width: 16px; height: 16px; top: 12px; right: 12px; position: absolute;
+        }
+        .viewfinder-corner-bl {
+            border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+            border-left: 2px solid rgba(0, 0, 0, 0.15);
+            width: 16px; height: 16px; bottom: 12px; left: 12px; position: absolute;
+        }
+        .viewfinder-corner-br {
+            border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+            border-right: 2px solid rgba(0, 0, 0, 0.15);
+            width: 16px; height: 16px; bottom: 12px; right: 12px; position: absolute;
+        }
+
+        /* Animated Pulsing Recording Dot */
+        .rec-dot {
+            animation: pulse 1.8s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body class="min-h-screen text-stone-800 flex flex-col justify-between items-center px-4 py-8 relative overflow-x-hidden selection:bg-stone-200 selection:text-stone-900">
+
+    <!-- Background Camera Grid Lines (Subtle Light Gray) -->
+    <div class="fixed inset-0 pointer-events-none opacity-[0.03] flex justify-between px-1/3 z-0">
+        <div class="w-[1px] h-full bg-black"></div>
+        <div class="w-[1px] h-full bg-black"></div>
+    </div>
+    <div class="fixed inset-0 pointer-events-none opacity-[0.03] flex flex-col justify-between py-1/3 z-0">
+        <div class="h-[1px] w-full bg-black"></div>
+        <div class="h-[1px] w-full bg-black"></div>
+    </div>
+
+    <!-- Main Content Container (vCard wrapper) -->
+    <main class="w-full max-w-md glass-card rounded-3xl p-6 relative z-10 shadow-xl overflow-hidden mt-4">
+        
+        <!-- Viewfinder Overlay Elements -->
+        <div class="viewfinder-corner-tl"></div>
+        <div class="viewfinder-corner-tr"></div>
+        <div class="viewfinder-corner-bl"></div>
+        <div class="viewfinder-corner-br"></div>
+
+        <!-- Camera Interface Info Bar -->
+        <div class="flex justify-between items-center text-[10px] uppercase tracking-wider text-stone-400 mb-8 px-2">
+            <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-red-600 rec-dot"></span>
+                <span class="font-bold text-stone-700">REC 4K</span>
+            </div>
+            <div class="font-mono">F2.8 | ISO 100</div>
+            <div class="font-bold">STBY</div>
+        </div>
+
+        <!-- Logo & Profile Details Section -->
+        <div class="flex flex-col items-center text-center">
+            
+            <!-- Dynamic Glowing Logo Container (Optimized for Black Logo) -->
+            <div class="relative mb-5 group">
+                <div class="absolute inset-0 rounded-full bg-stone-900/5 blur-xl scale-95 group-hover:scale-110 transition-transform duration-500"></div>
+                <div class="relative w-32 h-32 rounded-full p-[2px] bg-gradient-to-b from-stone-200 via-stone-300 to-stone-100">
+                    <img src="https://www.image2url.com/r2/default/images/1778970455403-9f93de23-f347-440e-bc14-cf91fbb6cc53.png" 
+                         alt="ONELIGHTCOL Logo" 
+                         class="w-full h-full object-contain rounded-full bg-white p-2 shadow-inner"
+                         onerror="this.src='https://placehold.co/150x150/f5f5f4/1c1917?text=ONELIGHTCOL'">
+                </div>
+                <!-- Shutter Aperture icon badge -->
+                <span class="absolute bottom-1 right-1 bg-stone-900 text-white text-xs p-1.5 rounded-full shadow-lg flex items-center justify-center border border-white">
+                    <i class="fa-solid fa-camera text-[10px]"></i>
+                </span>
+            </div>
+
+            <!-- Profile Meta Info -->
+            <h1 class="text-3xl font-black tracking-tight text-stone-900 uppercase">
+                ONELIGHTCOL
+            </h1>
+            
+            <p class="text-[11px] uppercase tracking-[0.25em] text-stone-500 font-bold mt-1">
+                Photography • Film • Creator
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-2 mt-3.5">
+                <span class="text-[10px] bg-stone-100 border border-stone-200/60 px-2.5 py-1 rounded-full text-stone-600 font-medium flex items-center gap-1">
+                    <i class="fa-solid fa-clapperboard text-stone-500 text-[8px]"></i> Contenido de Marca
+                </span>
+                <span class="text-[10px] bg-stone-100 border border-stone-200/60 px-2.5 py-1 rounded-full text-stone-600 font-medium flex items-center gap-1">
+                    <i class="fa-solid fa-bolt text-stone-500 text-[8px]"></i> Visual Storytelling
+                </span>
+            </div>
+
+            <p class="text-stone-500 text-xs mt-4 max-w-[85%] leading-relaxed font-normal">
+                Capturando la esencia visual y narrativa que impulsa a las marcas. Una perspectiva estética, limpia e impactante.
+            </p>
+        </div>
+
+        <!-- Call to Action Main Buttons (Save & Share in Contrast Theme) -->
+        <div class="grid grid-cols-2 gap-3 mt-7 mb-8 px-1">
+            <button onclick="downloadVCard()" class="flex items-center justify-center gap-2 bg-stone-900 text-white font-semibold text-sm py-3 px-4 rounded-xl hover:bg-stone-800 active:scale-95 transition-all duration-200 shadow-md">
+                <i class="fa-solid fa-user-plus"></i> Guardar Contacto
+            </button>
+            <button onclick="shareProfile()" class="flex items-center justify-center gap-2 bg-white border border-stone-200 text-stone-800 font-medium text-sm py-3 px-4 rounded-xl hover:bg-stone-50 active:scale-95 transition-all duration-200">
+                <i class="fa-solid fa-share-nodes text-stone-500"></i> Compartir Perfil
+            </button>
+        </div>
+
+        <!-- Ordered Contact & Social Media Links (Strict Order Requested) -->
+        <div class="space-y-3 px-1 mb-4">
+            <h3 class="text-[10px] uppercase tracking-widest text-stone-400 font-bold px-1 mb-2">Canales de Enlace</h3>
+
+            <!-- 1. Número de Teléfono -->
+            <a href="tel:+573005713917" class="glass-button w-full flex items-center justify-between p-4 rounded-xl group">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-lg bg-stone-100 flex items-center justify-center text-stone-800 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-phone text-base"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="block text-xs text-stone-400 uppercase font-semibold tracking-wider">Número de Teléfono</span>
+                        <span class="text-sm font-bold text-stone-800">300 571 3917</span>
+                    </div>
+                </div>
+                <div class="text-stone-400 group-hover:text-stone-900 transition-colors duration-200">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </div>
+            </a>
+
+            <!-- 2. WhatsApp -->
+            <a href="https://wa.me/573005713917?text=Hola!%20Me%20interesa%20conocer%20más%20sobre%20tus%20servicios%20de%20fotografía%20y%20video." target="_blank" rel="noopener" class="glass-button w-full flex items-center justify-between p-4 rounded-xl group">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="block text-xs text-stone-400 uppercase font-semibold tracking-wider">WhatsApp</span>
+                        <span class="text-sm font-bold text-stone-800">300 571 3917</span>
+                    </div>
+                </div>
+                <div class="text-stone-400 group-hover:text-emerald-600 transition-colors duration-200">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </div>
+            </a>
+
+            <!-- 3. Instagram -->
+            <a href="https://instagram.com/onelightcol" target="_blank" rel="noopener" class="glass-button w-full flex items-center justify-between p-4 rounded-xl group">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-lg bg-pink-50 flex items-center justify-center text-pink-600 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="block text-xs text-stone-400 uppercase font-semibold tracking-wider">Instagram</span>
+                        <span class="text-sm font-bold text-stone-800">@onelightcol</span>
+                    </div>
+                </div>
+                <div class="text-stone-400 group-hover:text-pink-600 transition-colors duration-200">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </div>
+            </a>
+
+            <!-- 4. TikTok -->
+            <a href="https://tiktok.com/@onelightcol" target="_blank" rel="noopener" class="glass-button w-full flex items-center justify-between p-4 rounded-xl group">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-lg bg-stone-100 flex items-center justify-center text-stone-950 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-brands fa-tiktok text-base"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="block text-xs text-stone-400 uppercase font-semibold tracking-wider">TikTok</span>
+                        <span class="text-sm font-bold text-stone-800">@onelightcol</span>
+                    </div>
+                </div>
+                <div class="text-stone-400 group-hover:text-stone-950 transition-colors duration-200">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Technical Camera Stats Footer inside card -->
+        <div class="flex justify-between items-center text-[9px] font-mono tracking-wider text-stone-400 border-t border-stone-100 pt-5 mt-6 px-1">
+            <span>WB 5600K</span>
+            <span>SHUTTER 1/125</span>
+            <span>BATT 99%</span>
+        </div>
+    </main>
+
+    <!-- Footer / Watermark watermark signature requested by the user -->
+    <footer class="w-full text-center mt-10 mb-4 z-10 px-4">
+        <p class="text-[10px] tracking-wider text-stone-400 uppercase font-medium leading-relaxed select-none">
+            Una creación especial de <a href="#" class="text-stone-600 font-bold hover:text-stone-900 transition-colors duration-200">EQB Studio</a>
+        </p>
+    </footer>
+
+    <!-- Custom Toast / Notification UI Overlay (High Contrast Dark on Light Page) -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-stone-900 text-white text-xs font-semibold py-3 px-5 rounded-xl shadow-2xl flex items-center gap-2.5 transform translate-y-24 opacity-0 transition-all duration-300 z-50">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        <span id="toast-message">Copiado al portapapeles</span>
+    </div>
+
+    <script>
+        // GENERATING DYNAMIC .VCF BUSINESS CARD FILE
+        function downloadVCard() {
+            // High fidelity vCard 3.0 string parameters
+            const vcard = "BEGIN:VCARD\n" +
+                          "VERSION:3.0\n" +
+                          "FN:ONELIGHTCOL\n" +
+                          "ORG:ONELIGHTCOL - Fotografía & Film\n" +
+                          "TITLE:Fotografía, Film y Creación de Contenido para Marcas\n" +
+                          "TEL;TYPE=CELL,VOICE:+573005713917\n" +
+                          "URL;TYPE=Instagram:https://instagram.com/onelightcol\n" +
+                          "URL;TYPE=TikTok:https://tiktok.com/@onelightcol\n" +
+                          "NOTE:Cambiando perspectivas visuales. Creado en EQB Studio.\n" +
+                          "END:VCARD";
+
+            const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const downloadLink = document.createElement("a");
+            downloadLink.href = url;
+            downloadLink.download = "ONELIGHTCOL.vcf";
+            
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            URL.revokeObjectURL(url);
+
+            showToast("✓ ¡Tarjeta de contacto descargada!");
+        }
+
+        // SHARE PROFILE LINK FUNCTION WITH TOAST NOTIFICATION
+        function shareProfile() {
+            const currentUrl = window.location.href;
+            
+            // Create fallback input elements for iframe constraints
+            const tempInput = document.createElement("input");
+            tempInput.value = currentUrl;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // Mobile Support
+            
+            try {
+                const successful = document.execCommand('copy');
+                if(successful) {
+                    showToast("🔗 ¡Enlace copiado al portapapeles!");
+                } else {
+                    showToast("No se pudo copiar de forma directa.");
+                }
+            } catch (err) {
+                showToast("Por favor copia la URL de la barra de dirección.");
+            }
+            
+            document.body.removeChild(tempInput);
+        }
+
+        // CUSTOM TOAST NOTIFICATION MANAGER
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            
+            toastMessage.textContent = message;
+            
+            // Bring Toast Up
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            // Hide after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
