@@ -81,13 +81,13 @@
         <!-- 2. Warm studio light overlay to unify background colors -->
         <div class="absolute inset-0 bg-stone-900/10"></div>
         
-        <!-- 3. Sharp centered zoomed-out image (contain) to keep the photographer and camera fully visible -->
-        <div class="absolute inset-0 bg-contain bg-center bg-no-repeat" 
-             style="background-image: url('https://www.image2url.com/r2/default/images/1778976664073-003b7966-240d-4bd1-bfed-e2f468dea72d.jpg');">
+        <!-- 3. Sharp centered vertical-scaled image (auto 75vh) to stretch the camera and photographer portrait beautifully -->
+        <div class="absolute inset-0 bg-center bg-no-repeat transition-all duration-300" 
+             style="background-image: url('https://www.image2url.com/r2/default/images/1778976664073-003b7966-240d-4bd1-bfed-e2f468dea72d.jpg'); background-size: auto 75vh;">
         </div>
         
         <!-- 4. Smooth gradient fade to blend the crisp centered photo with the blurred background edges -->
-        <div class="absolute inset-0 bg-gradient-to-b from-stone-100/15 via-transparent to-stone-950/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-stone-100/15 via-transparent to-stone-950/40"></div>
     </div>
 
     <!-- Background Camera Grid Lines (Subtle Light Gray overlay) -->
