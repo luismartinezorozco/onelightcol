@@ -67,6 +67,28 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.3; }
         }
+
+        /* Dynamic Responsive Background Image Setup */
+        .centered-photo-layer {
+            background-image: url('https://www.image2url.com/r2/default/images/1778976664073-003b7966-240d-4bd1-bfed-e2f468dea72d.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-size 0.3s ease;
+        }
+
+        /* Mobile Viewport / Portrait Mode (Screens taller than they are wide) */
+        @media (max-aspect-ratio: 1/1) {
+            .centered-photo-layer {
+                background-size: auto 70vh; /* Perfectly scales the height of the photo on mobile screens */
+            }
+        }
+
+        /* Desktop Viewport / Landscape Mode (Screens wider than they are wide) */
+        @media (min-aspect-ratio: 1/1) {
+            .centered-photo-layer {
+                background-size: contain; /* Displays the full horizontal camera composition on desktops */
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen text-stone-800 flex flex-col justify-between items-center px-4 py-8 relative overflow-x-hidden selection:bg-stone-200 selection:text-stone-900">
@@ -81,10 +103,8 @@
         <!-- 2. Warm studio light overlay to unify background colors -->
         <div class="absolute inset-0 bg-stone-900/10"></div>
         
-        <!-- 3. Sharp centered vertical-scaled image (auto 75vh) to stretch the camera and photographer portrait beautifully -->
-        <div class="absolute inset-0 bg-center bg-no-repeat transition-all duration-300" 
-             style="background-image: url('https://www.image2url.com/r2/default/images/1778976664073-003b7966-240d-4bd1-bfed-e2f468dea72d.jpg'); background-size: auto 75vh;">
-        </div>
+        <!-- 3. Sharp centered responsive-scaled image (using media query rules for mobile vs desktop) -->
+        <div class="absolute inset-0 centered-photo-layer"></div>
         
         <!-- 4. Smooth gradient fade to blend the crisp centered photo with the blurred background edges -->
         <div class="absolute inset-0 bg-gradient-to-b from-stone-100/15 via-transparent to-stone-950/40"></div>
