@@ -21,9 +21,9 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #fcfbf9;
-            /* Seamlessly blending the user image with a subtle warm studio overlay to ensure excellent readability */
+            /* Subtly adjusted the overlay (from 0.45 to 0.25) to make the background photo significantly more vivid and recognizable */
             background-image: 
-                linear-gradient(rgba(252, 251, 249, 0.45), rgba(252, 251, 249, 0.45)),
+                linear-gradient(rgba(252, 251, 249, 0.25), rgba(252, 251, 249, 0.25)),
                 url('https://www.image2url.com/r2/default/images/1778976664073-003b7966-240d-4bd1-bfed-e2f468dea72d.jpg');
             background-size: cover;
             background-position: center;
@@ -35,34 +35,34 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Enhanced transparency (0.42) and finer blur (8px) to reveal the background photo with greater clarity and realism */
+        /* Maximized transparency (0.22) and reduced blur (4px) to let the background elements show through clearly */
         .glass-card {
-            background: rgba(255, 255, 255, 0.42);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.22);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
         }
 
         /* Viewfinder framing effect representing a camera screen in dark contrast */
         .viewfinder-corner-tl {
-            border-top: 2px solid rgba(0, 0, 0, 0.25);
-            border-left: 2px solid rgba(0, 0, 0, 0.25);
+            border-top: 2px solid rgba(0, 0, 0, 0.3);
+            border-left: 2px solid rgba(0, 0, 0, 0.3);
             width: 16px; height: 16px; top: 12px; left: 12px; position: absolute;
         }
         .viewfinder-corner-tr {
-            border-top: 2px solid rgba(0, 0, 0, 0.25);
-            border-right: 2px solid rgba(0, 0, 0, 0.25);
+            border-top: 2px solid rgba(0, 0, 0, 0.3);
+            border-right: 2px solid rgba(0, 0, 0, 0.3);
             width: 16px; height: 16px; top: 12px; right: 12px; position: absolute;
         }
         .viewfinder-corner-bl {
-            border-bottom: 2px solid rgba(0, 0, 0, 0.25);
-            border-left: 2px solid rgba(0, 0, 0, 0.25);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+            border-left: 2px solid rgba(0, 0, 0, 0.3);
             width: 16px; height: 16px; bottom: 12px; left: 12px; position: absolute;
         }
         .viewfinder-corner-br {
-            border-bottom: 2px solid rgba(0, 0, 0, 0.25);
-            border-right: 2px solid rgba(0, 0, 0, 0.25);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+            border-right: 2px solid rgba(0, 0, 0, 0.3);
             width: 16px; height: 16px; bottom: 12px; right: 12px; position: absolute;
         }
 
@@ -79,11 +79,11 @@
 <body class="min-h-screen text-stone-800 flex flex-col justify-between items-center px-4 py-8 relative overflow-x-hidden selection:bg-stone-200 selection:text-stone-900">
 
     <!-- Background Camera Grid Lines (Subtle Light Gray, overlaying the background image beautifully) -->
-    <div class="fixed inset-0 pointer-events-none opacity-[0.04] flex justify-between px-1/3 z-0">
+    <div class="fixed inset-0 pointer-events-none opacity-[0.05] flex justify-between px-1/3 z-0">
         <div class="w-[1px] h-full bg-black"></div>
         <div class="w-[1px] h-full bg-black"></div>
     </div>
-    <div class="fixed inset-0 pointer-events-none opacity-[0.04] flex flex-col justify-between py-1/3 z-0">
+    <div class="fixed inset-0 pointer-events-none opacity-[0.05] flex flex-col justify-between py-1/3 z-0">
         <div class="h-[1px] w-full bg-black"></div>
         <div class="h-[1px] w-full bg-black"></div>
     </div>
@@ -97,8 +97,8 @@
         <div class="viewfinder-corner-bl"></div>
         <div class="viewfinder-corner-br"></div>
 
-        <!-- Camera Interface Info Bar (Higher contrast text-stone-700 / text-stone-950) -->
-        <div class="flex justify-between items-center text-[10px] uppercase tracking-wider text-stone-700 mb-8 px-2">
+        <!-- Camera Interface Info Bar (Higher contrast text-stone-800 / text-stone-950) -->
+        <div class="flex justify-between items-center text-[10px] uppercase tracking-wider text-stone-800 mb-8 px-2">
             <div class="flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-red-600 rec-dot"></span>
                 <span class="font-extrabold text-stone-950">REC 4K</span>
@@ -112,7 +112,7 @@
             
             <!-- Dynamic Glowing Logo Container (Optimized for Black Logo) -->
             <div class="relative mb-5 group">
-                <div class="absolute inset-0 rounded-full bg-stone-900/10 blur-xl scale-95 group-hover:scale-110 transition-transform duration-500"></div>
+                <div class="absolute inset-0 rounded-full bg-stone-900/15 blur-xl scale-95 group-hover:scale-110 transition-transform duration-500"></div>
                 <div class="relative w-32 h-32 rounded-full p-[2px] bg-gradient-to-b from-stone-200 via-stone-400 to-stone-100">
                     <img src="https://www.image2url.com/r2/default/images/1778970455403-9f93de23-f347-440e-bc14-cf91fbb6cc53.png" 
                          alt="ONE LIGHT PRODUCTIONS Logo" 
@@ -132,7 +132,7 @@
             </h1>
             
             <!-- Highlighted Specialty Label with High Contrast Pill Wrapper -->
-            <div class="mt-4 px-3.5 py-1.5 rounded-full bg-stone-950/10 border border-stone-950/20 backdrop-blur-md">
+            <div class="mt-4 px-3.5 py-1.5 rounded-full bg-stone-950/20 border border-stone-950/30 backdrop-blur-md">
                 <p class="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-stone-950 font-black">
                     PHOTO • FILMS • MANAGEMENT
                 </p>
@@ -140,37 +140,37 @@
             
             <!-- Tags (High Contrast backdrop bg-white/70) -->
             <div class="flex flex-wrap justify-center gap-2 mt-4">
-                <span class="text-[10px] bg-white/70 border border-stone-300 px-2.5 py-1 rounded-full text-stone-950 font-extrabold flex items-center gap-1 backdrop-blur-sm shadow-sm">
-                    <i class="fa-solid fa-clapperboard text-stone-800 text-[8px]"></i> Contenido de Marca
+                <span class="text-[10px] bg-white/80 border border-stone-350 px-2.5 py-1 rounded-full text-stone-950 font-extrabold flex items-center gap-1 backdrop-blur-sm shadow-sm">
+                    <i class="fa-solid fa-clapperboard text-stone-850 text-[8px]"></i> Contenido de Marca
                 </span>
-                <span class="text-[10px] bg-white/70 border border-stone-300 px-2.5 py-1 rounded-full text-stone-950 font-extrabold flex items-center gap-1 backdrop-blur-sm shadow-sm">
-                    <i class="fa-solid fa-bolt text-stone-800 text-[8px]"></i> Visual Storytelling
+                <span class="text-[10px] bg-white/80 border border-stone-350 px-2.5 py-1 rounded-full text-stone-950 font-extrabold flex items-center gap-1 backdrop-blur-sm shadow-sm">
+                    <i class="fa-solid fa-bolt text-stone-850 text-[8px]"></i> Visual Storytelling
                 </span>
             </div>
 
             <!-- Highly Readable Paragraph Text and CEO reference -->
-            <p class="text-stone-900 text-xs mt-5 max-w-[85%] leading-relaxed font-medium">
-                Capturando la esencia visual y narrativa que impulsa a las marcas. Una perspectiva estética, limpia e impactante. <span class="font-extrabold text-black">Tu marca en lo más alto.</span>
-                <span class="block mt-4 text-[11px] text-stone-800 font-semibold">
-                    CEO: <a href="https://instagram.com/williammadiedo" target="_blank" rel="noopener" class="text-black font-black hover:underline underline-offset-4 transition-all duration-200 bg-stone-950/5 px-2 py-0.5 rounded-md border border-stone-950/10">@williammadiedo</a>
+            <p class="text-stone-950 text-xs mt-5 max-w-[85%] leading-relaxed font-semibold">
+                Capturando la esencia visual y narrativa que impulsa a las marcas. Una perspectiva estética, limpia e impactante. <span class="font-black text-black">Tu marca en lo más alto.</span>
+                <span class="block mt-4 text-[11px] text-stone-900 font-bold">
+                    CEO: <a href="https://instagram.com/williammadiedo" target="_blank" rel="noopener" class="text-black font-black hover:underline underline-offset-4 transition-all duration-200 bg-stone-950/10 px-2 py-0.5 rounded-md border border-stone-950/20">@williammadiedo</a>
                 </span>
             </p>
         </div>
 
         <!-- Call to Action Main Buttons (Save & Share in High Contrast Monochromatic) -->
         <div class="grid grid-cols-2 gap-3 mt-8 mb-8 px-1">
-            <button onclick="downloadVCard()" class="flex items-center justify-center gap-2 bg-stone-950 text-white font-extrabold text-sm py-3 px-4 rounded-xl hover:bg-stone-900 active:scale-95 transition-all duration-200 shadow-lg">
+            <button onclick="downloadVCard()" class="flex items-center justify-center gap-2 bg-stone-950 text-white font-black text-sm py-3 px-4 rounded-xl hover:bg-stone-900 active:scale-95 transition-all duration-200 shadow-lg">
                 <i class="fa-solid fa-user-plus text-xs"></i> Guardar Contacto
             </button>
-            <button onclick="shareProfile()" class="flex items-center justify-center gap-2 bg-white/80 border border-stone-300 text-stone-950 font-extrabold text-sm py-3 px-4 rounded-xl hover:bg-white active:scale-95 transition-all duration-200 shadow-md backdrop-blur-sm">
-                <i class="fa-solid fa-share-nodes text-stone-800"></i> Compartir Perfil
+            <button onclick="shareProfile()" class="flex items-center justify-center gap-2 bg-white/90 border border-stone-350 text-stone-950 font-black text-sm py-3 px-4 rounded-xl hover:bg-white active:scale-95 transition-all duration-200 shadow-md backdrop-blur-sm">
+                <i class="fa-solid fa-share-nodes text-stone-850"></i> Compartir Perfil
             </button>
         </div>
 
         <!-- Ordered Contact & Social Media Links (Strict Order Requested) -->
         <div class="space-y-3 px-1 mb-4">
-            <h3 class="text-[10px] uppercase tracking-widest text-stone-800 font-extrabold px-1 mb-2 flex items-center gap-1.5">
-                <span class="w-1 h-3 bg-stone-900 rounded-full"></span> Canales de Enlace
+            <h3 class="text-[10px] uppercase tracking-widest text-stone-950 font-black px-1 mb-2 flex items-center gap-1.5">
+                <span class="w-1.5 h-3 bg-stone-950 rounded-full"></span> Canales de Enlace
             </h3>
 
             <!-- 1. Número de Teléfono -->
@@ -238,11 +238,11 @@
             </a>
         </div>
 
-        <!-- Technical Camera Stats Footer inside card (Higher contrast text-stone-700) -->
-        <div class="flex justify-between items-center text-[9px] font-mono tracking-wider text-stone-700 border-t border-stone-300 pt-5 mt-6 px-1">
-            <span class="font-bold">WB 5600K</span>
-            <span class="font-bold">SHUTTER 1/125</span>
-            <span class="font-bold">BATT 99%</span>
+        <!-- Technical Camera Stats Footer inside card (Higher contrast text-stone-800) -->
+        <div class="flex justify-between items-center text-[9px] font-mono tracking-wider text-stone-800 border-t border-stone-350 pt-5 mt-6 px-1">
+            <span class="font-black">WB 5600K</span>
+            <span class="font-black">SHUTTER 1/125</span>
+            <span class="font-black">BATT 99%</span>
         </div>
     </main>
 
