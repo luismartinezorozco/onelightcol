@@ -10,7 +10,7 @@
     <!-- Google Fonts for sleek premium design -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -35,33 +35,34 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Premium Light Glassmorphism Cards - Blur effect looks stunning with the new photographic background */
+        /* Enhanced transparency (0.42) and finer blur (8px) to reveal the background photo with greater clarity and realism */
         .glass-card {
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.42);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
         }
 
         /* Viewfinder framing effect representing a camera screen in dark contrast */
         .viewfinder-corner-tl {
-            border-top: 2px solid rgba(0, 0, 0, 0.15);
-            border-left: 2px solid rgba(0, 0, 0, 0.15);
+            border-top: 2px solid rgba(0, 0, 0, 0.25);
+            border-left: 2px solid rgba(0, 0, 0, 0.25);
             width: 16px; height: 16px; top: 12px; left: 12px; position: absolute;
         }
         .viewfinder-corner-tr {
-            border-top: 2px solid rgba(0, 0, 0, 0.15);
-            border-right: 2px solid rgba(0, 0, 0, 0.15);
+            border-top: 2px solid rgba(0, 0, 0, 0.25);
+            border-right: 2px solid rgba(0, 0, 0, 0.25);
             width: 16px; height: 16px; top: 12px; right: 12px; position: absolute;
         }
         .viewfinder-corner-bl {
-            border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-            border-left: 2px solid rgba(0, 0, 0, 0.15);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+            border-left: 2px solid rgba(0, 0, 0, 0.25);
             width: 16px; height: 16px; bottom: 12px; left: 12px; position: absolute;
         }
         .viewfinder-corner-br {
-            border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-            border-right: 2px solid rgba(0, 0, 0, 0.15);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+            border-right: 2px solid rgba(0, 0, 0, 0.25);
             width: 16px; height: 16px; bottom: 12px; right: 12px; position: absolute;
         }
 
@@ -96,14 +97,14 @@
         <div class="viewfinder-corner-bl"></div>
         <div class="viewfinder-corner-br"></div>
 
-        <!-- Camera Interface Info Bar -->
-        <div class="flex justify-between items-center text-[10px] uppercase tracking-wider text-stone-500 mb-8 px-2">
+        <!-- Camera Interface Info Bar (Higher contrast text-stone-700 / text-stone-950) -->
+        <div class="flex justify-between items-center text-[10px] uppercase tracking-wider text-stone-700 mb-8 px-2">
             <div class="flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-red-600 rec-dot"></span>
-                <span class="font-bold text-stone-800">REC 4K</span>
+                <span class="font-extrabold text-stone-950">REC 4K</span>
             </div>
-            <div class="font-mono">F2.8 | ISO 100</div>
-            <div class="font-bold">STBY</div>
+            <div class="font-mono font-bold">F2.8 | ISO 100</div>
+            <div class="font-black text-stone-950">STBY</div>
         </div>
 
         <!-- Logo & Profile Details Section -->
@@ -111,8 +112,8 @@
             
             <!-- Dynamic Glowing Logo Container (Optimized for Black Logo) -->
             <div class="relative mb-5 group">
-                <div class="absolute inset-0 rounded-full bg-stone-900/5 blur-xl scale-95 group-hover:scale-110 transition-transform duration-500"></div>
-                <div class="relative w-32 h-32 rounded-full p-[2px] bg-gradient-to-b from-stone-200 via-stone-300 to-stone-100">
+                <div class="absolute inset-0 rounded-full bg-stone-900/10 blur-xl scale-95 group-hover:scale-110 transition-transform duration-500"></div>
+                <div class="relative w-32 h-32 rounded-full p-[2px] bg-gradient-to-b from-stone-200 via-stone-400 to-stone-100">
                     <img src="https://www.image2url.com/r2/default/images/1778970455403-9f93de23-f347-440e-bc14-cf91fbb6cc53.png" 
                          alt="ONE LIGHT PRODUCTIONS Logo" 
                          class="w-full h-full object-contain rounded-full bg-white p-2 shadow-inner"
@@ -125,48 +126,55 @@
             </div>
 
             <!-- Profile Meta Info -->
-            <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-stone-900 uppercase leading-none">
+            <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-stone-950 uppercase leading-none">
                 ONE LIGHT
-                <span class="block text-3xl sm:text-4xl font-black tracking-tight text-stone-900 mt-1">PRODUCTIONS</span>
+                <span class="block text-3xl sm:text-4xl font-black tracking-tight text-stone-950 mt-1">PRODUCTIONS</span>
             </h1>
             
-            <p class="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-stone-400 font-bold mt-4">
-                PHOTO • FILMS • MANAGEMENT
-            </p>
+            <!-- Highlighted Specialty Label with High Contrast Pill Wrapper -->
+            <div class="mt-4 px-3.5 py-1.5 rounded-full bg-stone-950/10 border border-stone-950/20 backdrop-blur-md">
+                <p class="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-stone-950 font-black">
+                    PHOTO • FILMS • MANAGEMENT
+                </p>
+            </div>
             
-            <div class="flex flex-wrap justify-center gap-2 mt-3.5">
-                <span class="text-[10px] bg-stone-100/85 border border-stone-200/60 px-2.5 py-1 rounded-full text-stone-700 font-medium flex items-center gap-1">
-                    <i class="fa-solid fa-clapperboard text-stone-500 text-[8px]"></i> Contenido de Marca
+            <!-- Tags (High Contrast backdrop bg-white/70) -->
+            <div class="flex flex-wrap justify-center gap-2 mt-4">
+                <span class="text-[10px] bg-white/70 border border-stone-300 px-2.5 py-1 rounded-full text-stone-950 font-extrabold flex items-center gap-1 backdrop-blur-sm shadow-sm">
+                    <i class="fa-solid fa-clapperboard text-stone-800 text-[8px]"></i> Contenido de Marca
                 </span>
-                <span class="text-[10px] bg-stone-100/85 border border-stone-200/60 px-2.5 py-1 rounded-full text-stone-700 font-medium flex items-center gap-1">
-                    <i class="fa-solid fa-bolt text-stone-500 text-[8px]"></i> Visual Storytelling
+                <span class="text-[10px] bg-white/70 border border-stone-300 px-2.5 py-1 rounded-full text-stone-950 font-extrabold flex items-center gap-1 backdrop-blur-sm shadow-sm">
+                    <i class="fa-solid fa-bolt text-stone-800 text-[8px]"></i> Visual Storytelling
                 </span>
             </div>
 
-            <p class="text-stone-600 text-xs mt-4 max-w-[85%] leading-relaxed font-normal">
-                Capturando la esencia visual y narrativa que impulsa a las marcas. Una perspectiva estética, limpia e impactante. <span class="font-semibold text-stone-800">Tu marca en lo más alto.</span>
-                <span class="block mt-3 text-[11px] text-stone-500 font-normal">
-                    CEO: <a href="https://instagram.com/williammadiedo" target="_blank" rel="noopener" class="text-stone-950 font-bold hover:underline underline-offset-4 transition-all duration-200">@williammadiedo</a>
+            <!-- Highly Readable Paragraph Text and CEO reference -->
+            <p class="text-stone-900 text-xs mt-5 max-w-[85%] leading-relaxed font-medium">
+                Capturando la esencia visual y narrativa que impulsa a las marcas. Una perspectiva estética, limpia e impactante. <span class="font-extrabold text-black">Tu marca en lo más alto.</span>
+                <span class="block mt-4 text-[11px] text-stone-800 font-semibold">
+                    CEO: <a href="https://instagram.com/williammadiedo" target="_blank" rel="noopener" class="text-black font-black hover:underline underline-offset-4 transition-all duration-200 bg-stone-950/5 px-2 py-0.5 rounded-md border border-stone-950/10">@williammadiedo</a>
                 </span>
             </p>
         </div>
 
-        <!-- Call to Action Main Buttons (Save & Share in Monochromatic Contrast) -->
-        <div class="grid grid-cols-2 gap-3 mt-7 mb-8 px-1">
-            <button onclick="downloadVCard()" class="flex items-center justify-center gap-2 bg-stone-950 text-white font-semibold text-sm py-3 px-4 rounded-xl hover:bg-stone-900 active:scale-95 transition-all duration-200 shadow-md">
+        <!-- Call to Action Main Buttons (Save & Share in High Contrast Monochromatic) -->
+        <div class="grid grid-cols-2 gap-3 mt-8 mb-8 px-1">
+            <button onclick="downloadVCard()" class="flex items-center justify-center gap-2 bg-stone-950 text-white font-extrabold text-sm py-3 px-4 rounded-xl hover:bg-stone-900 active:scale-95 transition-all duration-200 shadow-lg">
                 <i class="fa-solid fa-user-plus text-xs"></i> Guardar Contacto
             </button>
-            <button onclick="shareProfile()" class="flex items-center justify-center gap-2 bg-white/90 border border-stone-200 text-stone-800 font-medium text-sm py-3 px-4 rounded-xl hover:bg-stone-50 active:scale-95 transition-all duration-200 shadow-sm">
-                <i class="fa-solid fa-share-nodes text-stone-500"></i> Compartir Perfil
+            <button onclick="shareProfile()" class="flex items-center justify-center gap-2 bg-white/80 border border-stone-300 text-stone-950 font-extrabold text-sm py-3 px-4 rounded-xl hover:bg-white active:scale-95 transition-all duration-200 shadow-md backdrop-blur-sm">
+                <i class="fa-solid fa-share-nodes text-stone-800"></i> Compartir Perfil
             </button>
         </div>
 
         <!-- Ordered Contact & Social Media Links (Strict Order Requested) -->
         <div class="space-y-3 px-1 mb-4">
-            <h3 class="text-[10px] uppercase tracking-widest text-stone-400 font-bold px-1 mb-2">Canales de Enlace</h3>
+            <h3 class="text-[10px] uppercase tracking-widest text-stone-800 font-extrabold px-1 mb-2 flex items-center gap-1.5">
+                <span class="w-1 h-3 bg-stone-900 rounded-full"></span> Canales de Enlace
+            </h3>
 
             <!-- 1. Número de Teléfono -->
-            <a href="tel:+573005713917" class="w-full flex items-center justify-between p-4 rounded-xl bg-stone-900 hover:bg-stone-800 text-white border border-stone-800/40 transition-all duration-300 shadow-md group">
+            <a href="tel:+573005713917" class="w-full flex items-center justify-between p-4 rounded-xl bg-stone-900 hover:bg-stone-850 text-white border border-stone-800/60 transition-all duration-300 shadow-md group">
                 <div class="flex items-center gap-3.5">
                     <div class="w-10 h-10 rounded-lg bg-stone-800 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-solid fa-phone text-sm"></i>
@@ -182,7 +190,7 @@
             </a>
 
             <!-- 2. WhatsApp -->
-            <a href="https://wa.me/573005713917?text=%C2%A1Hola%2C%20equipo%20ONELIGHT%21%E2%9A%A1Quiero%20llevar%20mi%20marca%20a%20lo%20mas%20alto.%20Me%20interesa%20coordinar%20una%20asesor%C3%ADa%20para%20conocer%20m%C3%A1s%20sobre%20sus%20servicios." target="_blank" rel="noopener" class="w-full flex items-center justify-between p-4 rounded-xl bg-stone-900 hover:bg-stone-800 text-white border border-stone-800/40 transition-all duration-300 shadow-md group">
+            <a href="https://wa.me/573005713917?text=%C2%A1Hola%2C%20equipo%20ONELIGHT%21%E2%9A%A1Quiero%20llevar%20mi%20marca%20a%20lo%20mas%20alto.%20Me%20interesa%20coordinar%20una%20asesor%C3%ADa%20para%20conocer%20m%C3%A1s%20sobre%20sus%20servicios." target="_blank" rel="noopener" class="w-full flex items-center justify-between p-4 rounded-xl bg-stone-900 hover:bg-stone-850 text-white border border-stone-800/60 transition-all duration-300 shadow-md group">
                 <div class="flex items-center gap-3.5">
                     <div class="w-10 h-10 rounded-lg bg-stone-800 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-brands fa-whatsapp text-base"></i>
@@ -198,7 +206,7 @@
             </a>
 
             <!-- 3. Instagram -->
-            <a href="https://instagram.com/onelightcol" target="_blank" rel="noopener" class="w-full flex items-center justify-between p-4 rounded-xl bg-stone-900 hover:bg-stone-800 text-white border border-stone-800/40 transition-all duration-300 shadow-md group">
+            <a href="https://instagram.com/onelightcol" target="_blank" rel="noopener" class="w-full flex items-center justify-between p-4 rounded-xl bg-stone-900 hover:bg-stone-850 text-white border border-stone-800/60 transition-all duration-300 shadow-md group">
                 <div class="flex items-center gap-3.5">
                     <div class="w-10 h-10 rounded-lg bg-stone-800 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-brands fa-instagram text-base"></i>
@@ -214,7 +222,7 @@
             </a>
 
             <!-- 4. TikTok -->
-            <a href="https://tiktok.com/@onelightcol" target="_blank" rel="noopener" class="w-full flex items-center justify-between p-4 rounded-xl bg-stone-900 hover:bg-stone-800 text-white border border-stone-800/40 transition-all duration-300 shadow-md group">
+            <a href="https://tiktok.com/@onelightcol" target="_blank" rel="noopener" class="w-full flex items-center justify-between p-4 rounded-xl bg-stone-900 hover:bg-stone-850 text-white border border-stone-800/60 transition-all duration-300 shadow-md group">
                 <div class="flex items-center gap-3.5">
                     <div class="w-10 h-10 rounded-lg bg-stone-800 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-brands fa-tiktok text-sm"></i>
@@ -230,11 +238,11 @@
             </a>
         </div>
 
-        <!-- Technical Camera Stats Footer inside card -->
-        <div class="flex justify-between items-center text-[9px] font-mono tracking-wider text-stone-400 border-t border-stone-100 pt-5 mt-6 px-1">
-            <span>WB 5600K</span>
-            <span>SHUTTER 1/125</span>
-            <span>BATT 99%</span>
+        <!-- Technical Camera Stats Footer inside card (Higher contrast text-stone-700) -->
+        <div class="flex justify-between items-center text-[9px] font-mono tracking-wider text-stone-700 border-t border-stone-300 pt-5 mt-6 px-1">
+            <span class="font-bold">WB 5600K</span>
+            <span class="font-bold">SHUTTER 1/125</span>
+            <span class="font-bold">BATT 99%</span>
         </div>
     </main>
 
