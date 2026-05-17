@@ -20,29 +20,21 @@
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            /* Warm studio gray matching the photographic background to blend seamlessly */
-            background-color: #eae8e5;
-            /* Adjusted size from cover to contain for a "zoomed out" (más alejada) perspective */
-            background-image: 
-                linear-gradient(rgba(234, 232, 229, 0.22), rgba(234, 232, 229, 0.22)),
-                url('https://www.image2url.com/r2/default/images/1778976664073-003b7966-240d-4bd1-bfed-e2f468dea72d.jpg');
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
+            /* Base dark stone color to match the photographer's dark shirt at the bottom of the photo */
+            background-color: #1c1917; 
         }
         
         .serif-font {
             font-family: 'Playfair Display', serif;
         }
 
-        /* Finely calibrated to 0.26 transparency and 4px blur so the camera details in the background are beautifully recognizable */
+        /* Calibrated to 0.26 transparency and 4px blur to elegantly show the centered sharp camera image behind it */
         .glass-card {
             background: rgba(255, 255, 255, 0.26);
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
             border: 1px solid rgba(255, 255, 255, 0.35);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.09);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
         }
 
         /* Viewfinder framing effect representing a camera screen in dark contrast */
@@ -79,7 +71,26 @@
 </head>
 <body class="min-h-screen text-stone-800 flex flex-col justify-between items-center px-4 py-8 relative overflow-x-hidden selection:bg-stone-200 selection:text-stone-900">
 
-    <!-- Background Camera Grid Lines (Subtle Light Gray, overlaying the background image beautifully) -->
+    <!-- DYNAMIC BACKGROUND LAYERS (Solves mobile aspect ratio cutting/banding issues) -->
+    <div class="fixed inset-0 -z-10 overflow-hidden select-none pointer-events-none">
+        <!-- 1. Blurred background to cover full screen height beautifully with the same photo color tones -->
+        <div class="absolute inset-0 bg-cover bg-center filter blur-3xl scale-110 opacity-60" 
+             style="background-image: url('https://www.image2url.com/r2/default/images/1778976664073-003b7966-240d-4bd1-bfed-e2f468dea72d.jpg');">
+        </div>
+        
+        <!-- 2. Warm studio light overlay to unify background colors -->
+        <div class="absolute inset-0 bg-stone-900/10"></div>
+        
+        <!-- 3. Sharp centered zoomed-out image (contain) to keep the photographer and camera fully visible -->
+        <div class="absolute inset-0 bg-contain bg-center bg-no-repeat" 
+             style="background-image: url('https://www.image2url.com/r2/default/images/1778976664073-003b7966-240d-4bd1-bfed-e2f468dea72d.jpg');">
+        </div>
+        
+        <!-- 4. Smooth gradient fade to blend the crisp centered photo with the blurred background edges -->
+        <div class="absolute inset-0 bg-gradient-to-b from-stone-100/15 via-transparent to-stone-950/30"></div>
+    </div>
+
+    <!-- Background Camera Grid Lines (Subtle Light Gray overlay) -->
     <div class="fixed inset-0 pointer-events-none opacity-[0.04] flex justify-between px-1/3 z-0">
         <div class="w-[1px] h-full bg-black"></div>
         <div class="w-[1px] h-full bg-black"></div>
@@ -171,7 +182,7 @@
         <!-- Ordered Contact & Social Media Links (Strict Order Requested) -->
         <div class="space-y-3 px-1 mb-4">
             <h3 class="text-[10px] uppercase tracking-widest text-stone-800 font-extrabold px-1 mb-2 flex items-center gap-1.5">
-                <span class="w-1.5 h-3 bg-stone-950 rounded-full"></span> Canales de Enlace
+                <span class="w-1.5 h-3 bg-stone-900 rounded-full"></span> Canales de Enlace
             </h3>
 
             <!-- 1. Número de Teléfono -->
