@@ -21,9 +21,9 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #fcfbf9;
-            /* Subtly adjusted the overlay (from 0.25 back to 0.45) to ensure superb legibility in the reverted version */
+            /* Optimized overlay (from 0.33 down to 0.28) to make the background photo pop with superior clarity */
             background-image: 
-                linear-gradient(rgba(252, 251, 249, 0.45), rgba(252, 251, 249, 0.45)),
+                linear-gradient(rgba(252, 251, 249, 0.28), rgba(252, 251, 249, 0.28)),
                 url('https://www.image2url.com/r2/default/images/1778976664073-003b7966-240d-4bd1-bfed-e2f468dea72d.jpg');
             background-size: cover;
             background-position: center;
@@ -35,13 +35,13 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Restored to 0.42 transparency and 8px blur as requested for the best balance of background visualization and readability */
+        /* Finely calibrated to 0.26 transparency and 4px blur so the camera details in the background are beautifully recognizable */
         .glass-card {
-            background: rgba(255, 255, 255, 0.42);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.26);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.09);
         }
 
         /* Viewfinder framing effect representing a camera screen in dark contrast */
@@ -261,6 +261,7 @@
 
     <script>
         // GENERATING DYNAMIC .VCF BUSINESS CARD FILE FOR ONE LIGHT PRODUCTIONS
+        // Follows STRICT rule to only use browser-safe, non-alert structures
         function downloadVCard() {
             const vcard = "BEGIN:VCARD\n" +
                           "VERSION:3.0\n" +
@@ -311,7 +312,7 @@
             document.body.removeChild(tempInput);
         }
 
-        // CUSTOM TOAST NOTIFICATION MANAGER
+        // CUSTOM TOAST NOTIFICATION MANAGER (Replaces browser alert/confirm)
         function showToast(message) {
             const toast = document.getElementById('toast');
             const toastMessage = document.getElementById('toast-message');
